@@ -31,7 +31,7 @@ public class Oauth2PracticeApplication extends WebSecurityConfigurerAdapter {
 
     @GetMapping("/error")
     public String error(HttpServletRequest request) {
-        String message = (String) request.getSession().getAttribute("error.message");
+        var message = (String) request.getSession().getAttribute("error.message");
         request.getSession().removeAttribute("error.message");
         return message;
     }
